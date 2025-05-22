@@ -1,0 +1,12 @@
+node_modules
+.DS_Store
+.env.local
+.vscode
+.git
+.next
+out
+dist
+*.log
+*.tmp
+*.bak
+*.swp
