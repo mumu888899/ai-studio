@@ -57,17 +57,3 @@ export enum GenerationPhase {
 }
 
 export type AssetType = 'coverImage' | 'backgroundImage' | 'interactiveElement' | 'diagram' | 'chartInfographic' | 'motivationalQuote';
-
-// For Gemini API structured responses (example)
-export interface DiagramConcept {
-  type: 'loop' | 'timeline' | 'pyramid' | 'grid' | 'other';
-  description: string;
-  labels: string[];
-  subtitle: string;
-}
-
-export interface InteractiveElementConcept {
-  type: 'tracker' | 'journal' | 'checklist';
-  description: string;
-  visualElements: string[]; // e.g. ["motivational icons", "soft gradients"]
-}
