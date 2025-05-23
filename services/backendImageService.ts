@@ -18,9 +18,10 @@ export async function generateImageFromBackend(prompt: string): Promise<string |
     // The backend returns the image as a base64 string directly
     return data.image;
 
-  } catch (error) {
+  } catch (error: any) {
+    const serviceErrorMessage = error.message || "Unknown backend error during image generation";
     console.error('Error generating image with backend service:', error);
-    // Depending on your error handling strategy, you might want to re-throw or return null
-    return null;
+    // Construct a new error or rethrow the original one, ensuring it's an Error instance
+    throw new Error(`Backend image generation failed: ${serviceErrorMessage}`);
   }
 }
